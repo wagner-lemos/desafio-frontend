@@ -1,0 +1,6 @@
+[Tue Nov 05 2024 20:15:40 GMT-0300 (Hora oficial do Brasil)] layer "+ R$786,39": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Tue Nov 05 2024 20:15:40 GMT-0300 (Hora oficial do Brasil)] layer "exemplo@exemplo.com.br": Unsupported extension: br
+[Tue Nov 05 2024 20:15:40 GMT-0300 (Hora oficial do Brasil)] layer "+ R$46,20": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Tue Nov 05 2024 20:15:40 GMT-0300 (Hora oficial do Brasil)] layer "lincolnalves@outlook.com": Unsupported extension: com
+[Tue Nov 05 2024 20:15:40 GMT-0300 (Hora oficial do Brasil)] layer-comp "+Nromal": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Tue Nov 05 2024 20:15:40 GMT-0300 (Hora oficial do Brasil)] layer-comp "+error": Expected Either a default asset specification or a layer asset specification but "+" found.

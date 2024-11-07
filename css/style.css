@@ -1,0 +1,369 @@
+/* inicia style globalmente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #29b3d1; 
+    --secondary-color: #F2F2F2;
+    --login-border: #0093AC;
+    --login-text: #707070;
+	--input-text: #999999;
+    --valid-element: #3BA85A;
+    --background-layout: #e7e7e7;
+    --border-layout: #D6D6D6;
+    --input-color: #9F9F9F;
+
+    --box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+html, body{
+    height: 100%;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    font-family: "Roboto", Arial, Helvetica;
+}
+
+
+/* Style da area de login */
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    width: 35%;
+    background-color: var(--secondary-color);
+    height: 100%;
+    border-right: var(--login-border) 2px solid;
+
+    -webkit-box-shadow:  var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    color: var(--login-text);
+}
+
+.login-container .logo{
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+    flex-grow: 1;
+}
+
+.login-box{
+    width: 80%;
+    flex-grow: 2;
+}
+
+.login-box p{
+    font-weight: 500;
+}
+
+.login-box p, .login-box input, .login-box button{
+    margin: 1.5rem 0;
+}
+
+.login-box .validElement{
+    border-bottom: 1px solid var(--valid-element);
+}
+
+.login-image{
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    right: 0px;
+}
+
+.login-box button{
+    padding: 15px;
+    border-radius: 25px;
+    width: 100%;
+    border: solid 1px var(--primary-color);
+    font-weight: bold;
+    color: var(--login-text);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.login-box button:hover{
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.login-box input{
+    width: 100%;
+    padding: 10px 0;
+    margin: 20px 0;
+    border: none;
+    border-bottom: 1px solid var(--login-text);
+    outline: none;
+    background: transparent;
+}
+
+.login-input{
+    position: relative;
+}
+
+.login-box label {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    transition: .5s;
+}
+
+.login-box input:focus ~ label,
+.login-box input:valid ~ label {  
+    top: 10px;
+    left: 0;
+    font-size: small;
+}
+
+.login-box .login-error{
+    border-bottom: 1px solid red;
+}
+
+.error-message{
+    display: none;
+    color: red;
+}
+
+
+/* Style da area de layout */
+
+.initialize-main{
+	z-index: 1;
+    width: 5%;
+    border-right: none;
+    transition: .6s;
+}
+
+.body-transition{
+    background-color: var(--background-layout);
+    transition: 1s;
+}
+
+.icons{
+    display: none;
+}
+
+.show-icons{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+.show-icons img{
+    width: 31px;
+
+    position: relative;
+    animation-timing-function: ease;
+    cursor: pointer;
+}
+
+.show-icons img:hover {
+    filter: brightness(0) saturate(100%) invert(66%) sepia(39%) saturate(4315%) hue-rotate(154deg) brightness(97%) contrast(102%);
+}
+
+.show-icons img:nth-child(1){
+    animation: icons-transition .4s;
+}
+
+.show-icons img:nth-child(2){
+    animation: icons-transition .6s;
+}
+
+.show-icons img:nth-child(3){
+	width: 26px;
+    animation: icons-transition .9s;
+}
+
+.show-icons img:nth-child(4){
+    animation: icons-transition 1.2s;
+}
+
+.show-icons img:nth-child(5){
+    animation: icons-transition 1.5s;
+}
+
+.show-icons img:nth-child(6){
+    animation: icons-transition 1.7s;
+}
+
+@keyframes icons-transition {
+    from {left: -100px;}
+    to {left: 0px;}
+}
+
+.layout{
+     width: 100%;
+     display: none;
+}
+
+.layout-header{
+    height: 100px;
+    background-color: #f2f2f2;
+    position: relative;
+}
+
+.layout-header .layout-title {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    font-weight: 500;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    padding: 0 60px 15px;
+}
+
+.layout-boxes{
+    display: flex;
+    gap: 3rem;
+    margin: 1.5rem 3rem;
+    height: calc(100% - 125px);
+}
+
+.layout-transactions, .layout-resume{
+    background-color: var(--secondary-color);
+    border: solid 1px var(--border-layout);
+    border-radius: 3px;
+}
+
+.layout-transactions{
+    width: 60%;
+	height: calc(100% - 25px);
+	
+} 
+
+.layout-resume{
+	background-color: var(--secondary-color);
+    width: 30%;
+	height: calc(100% - 25px);
+	display: flex;
+    flex-direction: column;
+}
+
+.layout-resume .loading{
+    padding: 60px 0;
+    text-align: center;
+}
+
+.layout-resume-header, .layout-transactions-header{
+    padding: 2rem 2rem .8rem 3rem;
+    background-color: var(--primary-color);
+    font-size: 1rem;
+	color: white;
+}
+
+#transactions{
+	flex-grow: 1;
+    overflow-y: auto;
+}
+
+.layout-transactions-body{
+	padding: 3rem;
+}
+
+#transactions{
+    padding: 0 3rem;
+}
+
+#layout-submit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#success{
+    padding: 10px 12px;
+    background: #d5ffce;
+    border: 1px solid #9adf8f;
+    font-size: 14px;
+    color: #556652;
+    display: none;
+}
+
+#value{
+	background-color: var(--secondary-color);
+    padding: 15px 15px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--input-text);
+}
+
+#description{
+	background-color: var(--secondary-color);
+    resize: none;
+    padding: 15px 15px;
+    border-radius: 6px;
+    letter-spacing: normal;
+	border: 1px solid var(--input-text);
+}
+
+#register{
+	background-color: var(--secondary-color);
+    padding: 10px 50px;
+    border-radius: 25px;
+    border: 1px solid var(--primary-color);
+    color: var(--login-text);
+    font-weight: 600;
+    align-self: end;
+    cursor: pointer;
+}
+
+#register:hover{
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.layout-exit{
+    position: absolute;
+    right: 150px;
+    bottom: 40px;
+    display: flex;
+    gap: .5rem;
+}
+
+.layout-name-user{
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.negative-transaction{
+    color: red;
+}
+
+.positive-transaction{
+    color: green;
+}
+
+.negative-transaction, .positive-transaction{
+    padding: 1rem;
+}
+
+.transaction-text{
+    color:var(--login-text);
+    font-size: small;
+}
+
+.resume-detail{
+    border-left: 1px dotted var(--primary-color);
+    position: relative;
+}
+
+.resume-circle{
+    position: absolute;
+    bottom: 35px;
+    left: -3px;
+}
+
+/* Edge */
+::-ms-input-placeholder { color: var(--input-color); }
+
+/* Firefox */
+::placeholder { color: var(--input-color); letter-spacing: normal; }
